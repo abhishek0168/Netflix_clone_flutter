@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:netflix_clone/core/constant.dart';
+import 'package:netflix_clone/presentation/widgets/main_title_widget.dart';
 
 const imageUrl =
     'https://www.themoviedb.org/t/p/w250_and_h141_face/7RySzFeK3LPVMXcPtqfZnl6u4p1.jpg';
@@ -14,19 +15,13 @@ class SearchIdleWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         kheight,
-        const Text(
-          'Top Searches',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+        const MainTitle(title: 'Top Searches'),
         kheight,
         Expanded(
           child: ListView.separated(
             shrinkWrap: true,
             itemBuilder: (context, index) => const TopSearchItemTile(),
-            separatorBuilder: (context, index) => kheight20,
+            separatorBuilder: (context, index) => kheight25,
             itemCount: 14,
           ),
         ),

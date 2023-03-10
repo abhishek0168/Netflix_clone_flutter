@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:netflix_clone/core/constant.dart';
+import 'package:netflix_clone/presentation/widgets/main_title_widget.dart';
 
 const imageUrl =
     'https://www.themoviedb.org/t/p/w220_and_h330_face/v28T5F1IygM8vXWZIycfNEm3xcL.jpg';
@@ -13,13 +14,7 @@ class SearchResultWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         kheight,
-        const Text(
-          'Top Searches',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+        const MainTitle(title: 'Top Searches'),
         kheight,
         Expanded(
           child: GridView.count(
@@ -30,7 +25,7 @@ class SearchResultWidget extends StatelessWidget {
             children: List.generate(
               21,
               (index) {
-                return const MainCard(
+                return const SearchMainCard(
                   imageUrl: imageUrl,
                 );
               },
@@ -42,8 +37,8 @@ class SearchResultWidget extends StatelessWidget {
   }
 }
 
-class MainCard extends StatelessWidget {
-  const MainCard({super.key, required this.imageUrl});
+class SearchMainCard extends StatelessWidget {
+  const SearchMainCard({super.key, required this.imageUrl});
   final String imageUrl;
   @override
   Widget build(BuildContext context) {
