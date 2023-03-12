@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netflix_clone/core/colors/colors.dart';
 import 'package:netflix_clone/presentation/main_page/widgets/screen_main_page.dart';
 
 void main() {
@@ -13,7 +14,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData.dark(),
+      theme: ThemeData(
+        appBarTheme: const AppBarTheme(backgroundColor: kBlack),
+        colorScheme: const ColorScheme.dark(),
+        scaffoldBackgroundColor: kBlack,
+      ),
       debugShowCheckedModeBanner: false,
       home: ScreenMainPage(),
     );

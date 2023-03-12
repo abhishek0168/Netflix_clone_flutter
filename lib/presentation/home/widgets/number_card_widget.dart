@@ -59,7 +59,7 @@ class NumberCardWidget extends StatelessWidget {
                       style: const TextStyle(
                         fontSize: 130,
                         fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 58, 55, 55),
+                        color: kBlack,
                       ),
                     ),
                   ),
